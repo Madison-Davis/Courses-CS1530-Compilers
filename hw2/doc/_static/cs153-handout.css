@@ -1,0 +1,56 @@
+/* CS153 Style sheet for handouts */
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    font-weight: normal;
+}
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+tt,code,pre,.literal {
+    font-family:monospace,serif;
+}
+
+pre {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    white-space: pre-wrap; /* Wrap long lines */
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    overflow: auto;
+    page-break-inside:avoid
+    
+}
+
+/* Add a bit of syntax highlighting for code */
+pre code {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Style code blocks within pre tags */
+pre code {
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.docutils.literal {
+    color: #e74c3c;
+    white-space: normal;
+    border: 1px solid #e1e4e5;
+}
+

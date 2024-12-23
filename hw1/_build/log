@@ -1,0 +1,130 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/madisondavis/Desktop/School/Courses/CS153/hw1
+# Auto-detected concurrency: 8
+$ /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -config > /var/folders/0l/0v32kggj3kg_4rxh88r7lfp40000gn/T/dune_fcdf56_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/Users/madisondavis/.opam/CS153/bin"
+#  ; ocaml = Ok External "/Users/madisondavis/.opam/CS153/bin/ocaml"
+#  ; ocamlc = External "/Users/madisondavis/.opam/CS153/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/Users/madisondavis/.opam/CS153/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/Users/madisondavis/.opam/CS153/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/madisondavis/.opam/CS153/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/madisondavis/.opam/CS153/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/Users/madisondavis/.opam/CS153/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/madisondavis/Desktop/School/Courses/CS153/hw1"
+#        ; "INSIDE_DUNE" :
+#            "/Users/madisondavis/Desktop/School/Courses/CS153/hw1/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/madisondavis/Desktop/School/Courses/CS153/hw1/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/madisondavis/Desktop/School/Courses/CS153/hw1/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/madisondavis/Desktop/School/Courses/CS153/hw1/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/madisondavis/.opam/CS153/lib" ]
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.14.1"
+#      ; standard_library_default = "/Users/madisondavis/.opam/CS153/lib/ocaml"
+#      ; standard_library = "/Users/madisondavis/.opam/CS153/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin22.6.0"
+#      ; target = "x86_64-apple-darwin22.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X031"
+#      ; cmi_magic_number = "Caml1999I031"
+#      ; cmo_magic_number = "Caml1999O031"
+#      ; cma_magic_number = "Caml1999A031"
+#      ; cmx_magic_number = "Caml1999Y031"
+#      ; cmxa_magic_number = "Caml1999Z031"
+#      ; ast_impl_magic_number = "Caml1999M031"
+#      ; ast_intf_magic_number = "Caml1999N031"
+#      ; cmxs_magic_number = "Caml1999D031"
+#      ; cmt_magic_number = "Caml1999T031"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -bin-annot -I bin/.hellocaml.objs/byte -no-alias-deps -opaque -o bin/.hellocaml.objs/byte/hellocaml.cmo -c -impl bin/hellocaml.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -a -o bin/hellocaml.cma bin/.hellocaml.objs/byte/hellocaml.cmo)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I test/.studenttests.objs/byte -I bin/.hellocaml.objs/byte -I lib/util/.util.objs/byte -no-alias-deps -opaque -o test/.studenttests.objs/byte/studenttests.cmo -c -impl test/studenttests.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I test/.gradedtests.objs/byte -I bin/.hellocaml.objs/byte -I lib/util/.util.objs/byte -no-alias-deps -opaque -o test/.gradedtests.objs/byte/gradedtests.cmo -c -impl test/gradedtests.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o test/studenttests.cma test/.studenttests.objs/byte/studenttests.cmo)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o test/gradedtests.cma test/.gradedtests.objs/byte/gradedtests.cmo)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -bin-annot -I bin/.main.eobjs/byte -I bin/.hellocaml.objs/byte -I lib/util/.util.objs/byte -I test/.gradedtests.objs/byte -I test/.studenttests.objs/byte -no-alias-deps -opaque -o bin/.main.eobjs/byte/dune__exe__Main.cmo -c -impl bin/main.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -I bin/.hellocaml.objs/byte -I bin/.hellocaml.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.hellocaml.objs/native/hellocaml.cmx -c -impl bin/hellocaml.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I test/.studenttests.objs/byte -I test/.studenttests.objs/native -I bin/.hellocaml.objs/byte -I bin/.hellocaml.objs/native -I lib/util/.util.objs/byte -I lib/util/.util.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/.studenttests.objs/native/studenttests.cmx -c -impl test/studenttests.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -a -o bin/hellocaml.cmxa bin/.hellocaml.objs/native/hellocaml.cmx)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I bin/.hellocaml.objs/byte -I bin/.hellocaml.objs/native -I lib/util/.util.objs/byte -I lib/util/.util.objs/native -I test/.gradedtests.objs/byte -I test/.gradedtests.objs/native -I test/.studenttests.objs/byte -I test/.studenttests.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o test/studenttests.cmxa test/.studenttests.objs/native/studenttests.cmx)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I test/.gradedtests.objs/byte -I test/.gradedtests.objs/native -I bin/.hellocaml.objs/byte -I bin/.hellocaml.objs/native -I lib/util/.util.objs/byte -I lib/util/.util.objs/native -intf-suffix .ml -no-alias-deps -opaque -o test/.gradedtests.objs/native/gradedtests.cmx -c -impl test/gradedtests.ml)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o test/gradedtests.cmxa test/.gradedtests.objs/native/gradedtests.cmx)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -shared -linkall -I bin -o bin/hellocaml.cmxs bin/hellocaml.cmxa)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I test -o test/studenttests.cmxs test/studenttests.cmxa)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I test -o test/gradedtests.cmxs test/gradedtests.cmxa)
+$ (cd _build/default && /Users/madisondavis/.opam/CS153/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -o bin/main.exe /Users/madisondavis/.opam/CS153/lib/ocaml/str.cmxa -I /Users/madisondavis/.opam/CS153/lib/ocaml /Users/madisondavis/.opam/CS153/lib/ocaml/unix.cmxa -I /Users/madisondavis/.opam/CS153/lib/ocaml lib/util/util.cmxa bin/hellocaml.cmxa test/studenttests.cmxa test/gradedtests.cmxa bin/.main.eobjs/native/dune__exe__Main.cmx)
+# Promoting "_build/default/bin/main.exe" to "bin/main.exe"

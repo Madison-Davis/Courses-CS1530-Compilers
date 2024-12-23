@@ -1,0 +1,11 @@
+lib: [
+  "_build/install/default/lib/hw1/META"
+  "_build/install/default/lib/hw1/dune-package"
+  "_build/install/default/lib/hw1/opam"
+]
+bin: [
+  "_build/install/default/bin/main"
+]
+doc: [
+  "_build/install/default/doc/hw1/README.md"
+]
