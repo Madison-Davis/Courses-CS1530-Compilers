@@ -1,0 +1,11 @@
+# HW1: Hellocaml!
+
+Quick Start:
+
+1. open the folder in VSCode
+2. start an OCaml sandbox terminal
+3. run `make test` from the command line
+4. open `bin/hellocaml.ml`
+
+The html version of the homework instructions,
+are also included [here](doc/hw1-hellocaml).

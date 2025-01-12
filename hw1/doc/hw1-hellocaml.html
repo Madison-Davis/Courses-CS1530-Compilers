@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<title>HW1: Hellocaml</title>
+<style type="text/css">
+
+/* CS153 Style sheet for handouts */
+
+body {
+    font-family: "Lato Extended","Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}    
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    font-weight: normal;
+}
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+tt,code,pre,.literal {
+    font-family:monospace,serif;
+}
+
+pre {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    white-space: pre-wrap; /* Wrap long lines */
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    overflow: auto;
+    page-break-inside:avoid
+    
+}
+
+/* Add a bit of syntax highlighting for code */
+pre code {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Style code blocks within pre tags */
+pre code {
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.docutils.literal {
+    color: #e74c3c;
+    white-space: normal;
+    border: 1px solid #e1e4e5;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="hw1-hellocaml">
+<span id="hellocaml"></span>
+<h1 class="title">HW1: Hellocaml</h1>
+
+<!-- -*- mode: rst -*- -->
+<!-- ###
+### CIS341 Course Links Configuration
+###
+### refer to one of these definitions via, e.g., |gradescope|_  (note the trailing underscore) -->
+<!-- _ -->
+<div class="section" id="overview">
+<h1>Overview</h1>
+<p>This project provides a refresher on OCaml programming and some
+warm-up exercises involving tree manipulation and recursive
+programming (both of which will be highly useful when building the
+compiler). It will also familiarize you with the basic workflow of the
+projects in this course, including the testing framework that we will
+use to (partially) automate the grading of your projects.</p>
+</div>
+<div class="section" id="before-you-begin">
+<h1>Before you begin</h1>
+<p>Please take some time to skim the available resources on the
+course homepage -- in particular, the <a class="reference external" href="https://canvas.harvard.edu/courses/124796/pages/resources">Resources page</a>,
+which contains links to useful information for setting up
+your environment, for learning OCaml, and for reference material.</p>
+<p><strong>Getting Started</strong></p>
+<p>Unlike future projects, most of the instructions for this project are
+found as comments in the source files. To get started on this project,
+run <tt class="docutils literal">make</tt> from the project root directory (in VSCode or in a terminal)
+and then continue to the <tt class="docutils literal">bin/hellocaml.ml</tt> file and follow the instructions
+(in comments) there.</p>
+<p><strong>Building the Project</strong></p>
+<p>It is recommended that you compile your projects from the command
+line, using <tt class="docutils literal">make</tt>. We have included a <tt class="docutils literal">Makefile</tt> that provides
+several make targets that can help you with the homework:</p>
+<pre class="literal-block">
+make       --  builds oatc using dune
+make test  --  runs the test suite
+make clean --  cleans your project directory
+make utop  --  starts a utop for the project
+make zip   --  creates a zip file with the code you need to submit
+</pre>
+<p>For example, using make we can build the project and run the tests all
+in one go:</p>
+<pre class="literal-block">
+&gt; make test
+dune build
+... [[ warnings omitted ]]
+./oatc --test
+Running test Student-Provided Tests For Problem 1-3
+Running test Problem1-1
+Running test Problem1-2
+...
+</pre>
+</div>
+<div class="section" id="command-line-running-and-testing-projects">
+<h1>Command-line Running and Testing Projects</h1>
+<p>After compiling the project, you can run it from the command line.</p>
+<p>The projects in this course are designed to have a single, top-level
+entry point in the file <tt class="docutils literal">main.ml</tt>. Upon running <tt class="docutils literal">make</tt>, it compiles to
+an executable <tt class="docutils literal">main.exe</tt>, and copies it as <cite>oatc</cite> to the root of the project.</p>
+<p>This program provides a test harness that can be used from the command
+line with a variety of switches and command-line arguments, just like
+any other compiler. You can always check which command-line switches
+are available by using the <tt class="docutils literal"><span class="pre">-help</span></tt> or <tt class="docutils literal"><span class="pre">--help</span></tt> flags. For example,
+HW1 supports only one interesting command-line option <tt class="docutils literal"><span class="pre">--test</span></tt>:</p>
+<pre class="literal-block">
+&gt; ./oatc -help
+ CS153 main test harness
+
+  --test run the test suite, ignoring other inputs
+  -help  Display this list of options
+  --help  Display this list of options
+</pre>
+<p>All of our projects will support the <tt class="docutils literal"><span class="pre">--test</span></tt> option, which will
+simply run the project's unit tests, print a summary of the results
+and then exit. It might give output something like this (bogus sample)
+that will give you some idea about how much of the project you've
+completed:</p>
+<pre class="literal-block">
+&gt; ./oatc --test
+
+Test1:
+  case1: failed - not equal
+  case2: failed - assert fail
+  case3: failed - test threw an unknown exception
+Test4:
+  OK
+Test2 (3/10 points)
+  case1: failed - not equal
+  case2: failed - not equal
+  case3: passed
+Test3 (??/20 points):
+  Hidden
+Test5 (10/10 points):
+  OK
+---------------------------------------------------
+Passed: 5/10
+Failed: 5/10
+Score: 13/20 (given)
+       ??/20 (hidden)
+</pre>
+<p>Once the compiler projects reach the stage where we can generate good
+assembly output, <tt class="docutils literal">oatc</tt> will support more interesting
+command-line options and be able to process input files in a way that
+should be familiar if you've ever used gcc or another compiler.</p>
+</div>
+<div class="section" id="grading">
+<h1>Grading</h1>
+<p>Submit your solution to this assignment on Gradescope. To make it a bit easier, you can execute <tt class="docutils literal">make zip</tt>, which will create a zip file containing all the relevant files. You can then upload that zip file to Gradescope.</p>
+<p><strong>Projects that do not compile will receive no credit!</strong></p>
+<p>Your grade for this project will be based on:</p>
+<ul class="simple">
+<li>64 Points for the test cases that are visible to you</li>
+<li>23 Points for the hidden test cases</li>
+<li>8  Points for the tests you provide (manually graded)</li>
+<li>5 Points for &quot;programming style&quot; (manually graded) -- see the Resources page on the course website for a link to a style document</li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+Generated on: 2023-09-06 17:38 UTC.
+
+</div>
+</body>
+</html>
